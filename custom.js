@@ -24,16 +24,12 @@ document.querySelectorAll('nav a').forEach(anchor => {
 // });
 
 // Project carousel
-$(document).ready(function(){
+$(document).ready(function () {
+    // Initialize Owl Carousel
     $(".owl-carousel").owlCarousel({
-        items: 1,
         loop: true,
         margin: 10,
-        autoplay: true,
-        autoplayTimeout: 3000,
-        autoplayHoverPause: true,
         nav: true,
-        dots: true,
         responsive: {
             0: {
                 items: 1
@@ -45,6 +41,24 @@ $(document).ready(function(){
                 items: 3
             }
         }
+    });
+
+    // Mobile menu toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('nav ul');
+
+    menuToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('show');
+    });
+
+    // Smooth scrolling for navigation
+    document.querySelectorAll('nav a').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
     });
 });
 
