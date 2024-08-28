@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Email details
-    $to = "your-email@example.com"; // Replace with your email address
+    $to = "hasibur@techievolve.com"; // Replace with your email address
     $subject = "Contact Form Submission from $name";
     $headers = "From: $email\r\n";
     $headers .= "Reply-To: $email\r\n";
